@@ -21,9 +21,67 @@ header {
     width: 100%;
     height: pxTorem(45px);
     flex-shrink: 0;
+    @include box_flex;
+    @include justify(space-between);
+    @include align;
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    .inp {
+        flex: 1;
+        height: 100%;
+        padding: pxTorem(10px) pxTorem(5px);
+        position: relative;
+        input {
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            padding: 0 pxTorem(20px);
+            border-radius: pxTorem(5px);
+        }
+        .icon {
+            position: absolute;
+            top: pxTorem(15px);
+            left: pxTorem(10px);
+            font-size: pxTorem(14px);
+            color: #ccc;
+        }
+    }
+    .icon {
+        font-size: pxTorem(16px)
+    }
 }
 
 section {
     width: 100%;
     flex-grow: 1;
+    @include box_flex;
+    .left {
+        flex: 2
+    }
+    .right {
+        flex: 8;
+        @include box_flex;
+        @include flexWrap(wrap);
+        padding: pxTorem(15px);
+        @include sizing;
+        dl {
+            width: 28%;
+            height: pxTorem(50px);
+            @include box_flex;
+            @include direction(column);
+            margin-left: pxTorem(10px);
+            dt {
+                flex: 7;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            dd {
+                flex: 3;
+                width: 100%
+            }
+        }
+    }
 }
